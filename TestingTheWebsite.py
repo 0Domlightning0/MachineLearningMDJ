@@ -5,7 +5,7 @@ import numpy as np
 np.set_printoptions(precision=3, suppress=True)
 
 abalone_train = pd.read_csv(
-    "https://wellingtoncdsbca-my.sharepoint.com/personal/wr648190_wellingtoncdsb_ca/Documents/Names_missing_OSSLT.csv?web=1",
+    "https://storage.googleapis.com/download.tensorflow.org/data/abalone_train.csv",
     names=["Length", "Diameter", "Height", "Whole weight", "Shucked weight",
            "Viscera weight", "Shell weight", "Age"])
 
@@ -16,4 +16,3 @@ abalone_labels = abalone_features.pop('Age')
 
 abalone_features = np.array(abalone_features)
 print(abalone_features)
-
