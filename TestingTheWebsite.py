@@ -1,3 +1,15 @@
+
+# Go to Terminal
+
+# python -m pip install pandas
+# python -m pip install numpy
+
+
+
+
+
+
+
 import pandas as pd
 import numpy as np
 
