@@ -63,11 +63,6 @@ print("Finished training the model")
 
 #input Shape =  
 
-import matplotlib.pyplot as plt
-plt.xlabel('Epoch Number')
-plt.ylabel("Loss Magnitude")
-plt.plot(history.history['loss'])   
-
 print(model.predict([220.0]))
 print(model.predict([860.0]))
 print(model.predict([1145.0]))
