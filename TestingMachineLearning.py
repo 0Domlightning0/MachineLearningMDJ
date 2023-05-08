@@ -29,11 +29,6 @@ print("Finished training the model")
 
 #input Shape =  
 
-import matplotlib.pyplot as plt
-plt.xlabel('Epoch Number')
-plt.ylabel("Loss Magnitude")
-plt.plot(history.history['loss'])   
-
 print(model.predict([100.0]))
 
 print("These are the layer variables: {}".format(l0.get_weights()))
