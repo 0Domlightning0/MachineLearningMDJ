@@ -56,51 +56,51 @@ df.PercentageofGrade3StudentsAchievingtheProvincialStandardinWriting = df.Percen
 df
 
 
-
-
 reg = linear_model.LinearRegression()
 reg.fit(df[['Enrolment',"Latitude","Longitude","PercentageofStudentsWhoseFirstLanguageIsNotEnglish","PercentageofStudentsWhoseFirstLanguageIsNotFrench","PercentageofStudentsWhoAreNewtoCanadafromaNonEnglishSpeakingCountry","PercentageofStudentsWhoAreNewtoCanadafromaNonFrenchSpeakingCountry","PercentageofStudentsReceivingSpecialEducationServices","PercentageofStudentsIdentifiedasGifted","ChangeinGrade3ReadingAchievementOverThreeYears","PercentageofGrade3StudentsAchievingtheProvincialStandardinWriting","ChangeinGrade3WritingAchievementOverThreeYears","PercentageofGrade3StudentsAchievingtheProvincialStandardinMathematics","ChangeinGrade3MathematicsAchievementOverThreeYears","PercentageofGrade6StudentsAchievingtheProvincialStandardinReading","ChangeinGrade6ReadingAchievementOverThreeYears","PercentageofGrade6StudentsAchievingtheProvincialStandardinWriting","ChangeinGrade6WritingAchievementOverThreeYears","PercentageofGrade6StudentsAchievingtheProvincialStandardinMathematics","ChangeinGrade6MathematicsAchievementOverThreeYears"]], df.PercentageofGrade3StudentsAchievingtheProvincialStandardinReading)
 
 
-Enrolment_Input = 675 #
+res= [685, 43.2059, -79.916, 9, 100, 3, 3.1, 7, 0, 81, 5, 70, 0.1, 55, -11, 84, 0.2, 88, 1, 53, 6]
 
-Latitude_Input = 43 #
+Enrolment_Input = int(res[0])
 
-LongitudeInput = -78 #
+Latitude_Input = int(res[1])
 
-PercentageofStudentsWhoseFirstLanguageIsNotEnglishInput = 4 #
+LongitudeInput = int(res[2])
 
-PercentageofStudentsWhoseFirstLanguageIsNotFrenchInput = 99 #
+PercentageofStudentsWhoseFirstLanguageIsNotEnglishInput = int(res[3])
 
-PercentageofStudentsWhoAreNewtoCanadafromaNonEnglishSpeakingCountryInput = 1 #
+PercentageofStudentsWhoseFirstLanguageIsNotFrenchInput = int(res[4])
 
-PercentageofStudentsWhoAreNewtoCanadafromaNonFrenchSpeakingCountryInput = 1 #
+PercentageofStudentsWhoAreNewtoCanadafromaNonEnglishSpeakingCountryInput = int(res[5])
 
-PercentageofStudentsReceivingSpecialEducationServicesInput = 9 #
+PercentageofStudentsWhoAreNewtoCanadafromaNonFrenchSpeakingCountryInput = int(res[6])
 
-PercentageofStudentsIdentifiedasGiftedInput = 0 #
+PercentageofStudentsReceivingSpecialEducationServicesInput = int(res[7])
 
-ChangeinGrade3ReadingAchievementOverThreeYearsInput = 3 #
+PercentageofStudentsIdentifiedasGiftedInput = int(res[8])
 
-PercentageofGrade3StudentsAchievingtheProvincialStandardinWritingInput = 95 #
+ChangeinGrade3ReadingAchievementOverThreeYearsInput = int(res[10])
 
-ChangeinGrade3WritingAchievementOverThreeYearsInput = 7 #
+PercentageofGrade3StudentsAchievingtheProvincialStandardinWritingInput = int(res[11])
 
-PercentageofGrade3StudentsAchievingtheProvincialStandardinMathematicsInput = 62 #
+ChangeinGrade3WritingAchievementOverThreeYearsInput = int(res[12])
 
-ChangeinGrade3MathematicsAchievementOverThreeYearsInput = 8 #
+PercentageofGrade3StudentsAchievingtheProvincialStandardinMathematicsInput = int(res[13])
 
-PercentageofGrade6StudentsAchievingtheProvincialStandardinReadingInput = 93 #
+ChangeinGrade3MathematicsAchievementOverThreeYearsInput = int(res[14])
 
-ChangeinGrade6ReadingAchievementOverThreeYearsInput = -4 #
+PercentageofGrade6StudentsAchievingtheProvincialStandardinReadingInput = int(res[15])
 
-PercentageofGrade6StudentsAchievingtheProvincialStandardinWritingInput = 91 #
+ChangeinGrade6ReadingAchievementOverThreeYearsInput = int(res[16])
 
-ChangeinGrade6WritingAchievementOverThreeYearsInput = 2 #
+PercentageofGrade6StudentsAchievingtheProvincialStandardinWritingInput = int(res[17])
 
-PercentageofGrade6StudentsAchievingtheProvincialStandardinMathematicsInput = 48 #
+ChangeinGrade6WritingAchievementOverThreeYearsInput = int(res[18])
 
-ChangeinGrade6MathematicsAchievementOverThreeYearsInput = -17 #
+PercentageofGrade6StudentsAchievingtheProvincialStandardinMathematicsInput = int(res[19])
+
+ChangeinGrade6MathematicsAchievementOverThreeYearsInput = int(res[20])
 
 print(reg.intercept_)
 print( reg.coef_[0] * Enrolment_Input)
@@ -131,3 +131,7 @@ print()
 
 
 print(reg.intercept_ + reg.coef_[0] * Enrolment_Input + reg.coef_[1] * Latitude_Input + LongitudeInput * reg.coef_[2] + PercentageofStudentsWhoseFirstLanguageIsNotEnglishInput * reg.coef_[3] + PercentageofStudentsWhoseFirstLanguageIsNotFrenchInput * reg.coef_[4] + PercentageofStudentsWhoAreNewtoCanadafromaNonEnglishSpeakingCountryInput + reg.coef_[5] + PercentageofStudentsWhoAreNewtoCanadafromaNonFrenchSpeakingCountryInput * reg.coef_[6] + PercentageofStudentsReceivingSpecialEducationServicesInput * reg.coef_[7] + PercentageofStudentsIdentifiedasGiftedInput * reg.coef_[8] + ChangeinGrade3ReadingAchievementOverThreeYearsInput * reg.coef_[9] + PercentageofGrade3StudentsAchievingtheProvincialStandardinWritingInput * reg.coef_[10] + ChangeinGrade3WritingAchievementOverThreeYearsInput * reg.coef_[11] + PercentageofGrade3StudentsAchievingtheProvincialStandardinMathematicsInput * reg.coef_[12] + ChangeinGrade3MathematicsAchievementOverThreeYearsInput * reg.coef_[13] + PercentageofGrade6StudentsAchievingtheProvincialStandardinReadingInput * reg.coef_[14] + ChangeinGrade6ReadingAchievementOverThreeYearsInput * reg.coef_[15] + PercentageofGrade6StudentsAchievingtheProvincialStandardinWritingInput * reg.coef_[16] + ChangeinGrade6WritingAchievementOverThreeYearsInput * reg.coef_[17] + PercentageofGrade6StudentsAchievingtheProvincialStandardinMathematicsInput * reg.coef_[18] + ChangeinGrade6MathematicsAchievementOverThreeYearsInput * reg.coef_[19])
+
+print("Actual answer:")
+
+print(res[9])
