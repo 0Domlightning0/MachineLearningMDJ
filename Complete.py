@@ -111,11 +111,13 @@ ChangeinGrade3MathematicsAchievementOverThreeYearsInput = int(res[14])
 
 
 
-#Prints  out the bais/y int of the linear equasion  
+# Prints  out the bais/y int of the linear equasion  
+# Would be the "b" in y = mx + b
 print(reg.intercept_)
 print()
 
-#Prints  out the Input/Actual Value mulitplied by its given weight 
+# Prints  out the Input/Actual Value mulitplied by its given weight 
+# Shows the Impact
 print( reg.coef_[0] * Enrolment_Input)
 print( reg.coef_[1] * Latitude_Input)
 print( LongitudeInput * reg.coef_[2])
@@ -149,4 +151,3 @@ print(res[19])
 
 #Calculates the score of the model Best score is 1.0
 print(reg.score(df[['Enrolment',"Latitude","Longitude","PercentageofStudentsWhoseFirstLanguageIsNotEnglish","PercentageofStudentsWhoseFirstLanguageIsNotFrench","PercentageofStudentsWhoAreNewtoCanadafromaNonEnglishSpeakingCountry","PercentageofStudentsWhoAreNewtoCanadafromaNonFrenchSpeakingCountry","PercentageofStudentsReceivingSpecialEducationServices","PercentageofStudentsIdentifiedasGifted","PercentageofGrade3StudentsAchievingtheProvincialStandardinReading","ChangeinGrade3ReadingAchievementOverThreeYears","PercentageofGrade3StudentsAchievingtheProvincialStandardinWriting","ChangeinGrade3WritingAchievementOverThreeYears","PercentageofGrade3StudentsAchievingtheProvincialStandardinMathematics","ChangeinGrade3MathematicsAchievementOverThreeYears",]].values , df.PercentageofGrade6StudentsAchievingtheProvincialStandardinMathematics  ))
-
