@@ -5,3 +5,4 @@
 # python -m pip install openpyxl
 
 # May have to use either python or py idk it chnages based on hardware
+# Do not copy #'s
