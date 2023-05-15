@@ -3,3 +3,5 @@
 # python -m pip install pandas
 # python -m pip install numpy
 # python -m pip install openpyxl
+
+# May have to use either python or py idk it chnages based on hardware
