@@ -4,7 +4,7 @@ from sklearn import linear_model
 
 #py pip install -U scikit-learn
 
-df = pd.read_csv('https://raw.githubusercontent.com/0Domlightning0/MachineLearningOffical/main/No_missing_OSSLT.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/0Domlightning0/MachineLearningOffical/main/OSSLT_Train.csv')
 df
 
 
@@ -73,7 +73,7 @@ reg.fit(df[['Enrolment',"Latitude","Longitude","PercentageofStudentsWhoseFirstLa
 
 
 #Values of the CSV file in a list format for easy processing
-thingy = pd.read_csv("https://raw.githubusercontent.com/0Domlightning0/MachineLearningOffical/main/No_missing_OSSLT.csv", nrows=0,skiprows=468,header=0)
+thingy = pd.read_csv("https://raw.githubusercontent.com/0Domlightning0/MachineLearningOffical/main/OSSLT_Eval.csv", nrows=0,skiprows=1,header=0)
 
 thingy = str(thingy)
 x = thingy.index(']')
