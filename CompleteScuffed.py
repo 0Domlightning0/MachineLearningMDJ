@@ -150,8 +150,9 @@ print(reg.predict([ res[0:15] ]))
 
 print("Actual answer:")
 
-# Takes the value traight from the CSV to show the real answer
+# Takes the value straight from the CSV to show the real answer
 print(res[19])
 
-#Calculates the score of the model Best score is 1.0
+# Calculates the score of the model Best score is 1.0
+# A score of 0.52111 signfiies that 100(1 - 0.52111)% 
 print(reg.score(df[['Enrolment',"Latitude","Longitude","PercentageofStudentsWhoseFirstLanguageIsNotEnglish","PercentageofStudentsWhoseFirstLanguageIsNotFrench","PercentageofStudentsWhoAreNewtoCanadafromaNonEnglishSpeakingCountry","PercentageofStudentsWhoAreNewtoCanadafromaNonFrenchSpeakingCountry","PercentageofStudentsReceivingSpecialEducationServices","PercentageofStudentsIdentifiedasGifted","PercentageofGrade3StudentsAchievingtheProvincialStandardinReading","ChangeinGrade3ReadingAchievementOverThreeYears","PercentageofGrade3StudentsAchievingtheProvincialStandardinWriting","ChangeinGrade3WritingAchievementOverThreeYears","PercentageofGrade3StudentsAchievingtheProvincialStandardinMathematics","ChangeinGrade3MathematicsAchievementOverThreeYears",]].values , df.PercentageofGrade6StudentsAchievingtheProvincialStandardinMathematics  ))
