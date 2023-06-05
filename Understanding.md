@@ -13,6 +13,8 @@ This shows that having a large school doesnt benefit math or writing more
 
 ### Latitude 
 
-For Math and Writing the weighting for latitude as a small but noticeabke difference 
+For Math and Writing the weighting for latitude is the biggest difference in weights in the entire set, affecting math much more than writing
+
+For schools more North of Ontario
 
 
