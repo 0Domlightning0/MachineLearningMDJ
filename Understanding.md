@@ -64,3 +64,23 @@ A possibility is that students coming from underdeveloped french speaking countr
 
 
 
+
+
+
+# Impoving the program
+
+An R value of just over 0.5 for math and 0.48 for writing is not amazing
+
+We could impliment more segments to the code that could improve efficiency or depth 
+
+For efficiency we could make the program faster 
+
+every time we run the program the weights are exaclty the same which shows the program doesn't iterate internally 
+
+
+
+
+
+
+
+
