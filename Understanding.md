@@ -77,7 +77,11 @@ Every time we run the program the weights are exaclty the same which shows the p
 
 
 
+# Bias
 
+The bias/ y int for both Math and Writing is very large. 
+
+A value of 
 
 
 
