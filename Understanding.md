@@ -73,7 +73,7 @@ An R value of just over 0.5 for math and 0.48 for writing is not amazing
 
 We could impliment more segments to the code that could improve accuracy and depth 
 
-Every time we run the program the weights are exaclty the same which shows the program doesn't iterate internally
+Every time we run the program the weights are exaclty the same which shows the program doesn't iterate internally( Include tensorflow)
 
 Predict Math and writing at the same time
 
