@@ -81,7 +81,7 @@ Every time we run the program the weights are exaclty the same which shows the p
 
 The bias/ y int for both Math and Writing is very large. 
 
-A value of 
+A y-int value of roughly 59 is huge when condidering the answer is 
 
 
 
