@@ -193,7 +193,8 @@ writing.fit(df[['Enrolment',"Latitude","Longitude","PercentageofStudentsWhoseFir
 # Values of the CSV file in a list format for easy processing
 thingy = pd.read_csv("https://raw.githubusercontent.com/0Domlightning0/MachineLearningOffical/main/OSSLT_Eval.csv", nrows=0,skiprows=192,header=0)
 
-
+print(reg.intercept_)
+print()
 print( writing.coef_[0] * Enrolment_Input)
 print( writing.coef_[1] * Latitude_Input)
 print( LongitudeInput * writing.coef_[2])
