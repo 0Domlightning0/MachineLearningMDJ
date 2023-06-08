@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import math
 
 # python -m pip install pandas
 # python -m pip install numpy
@@ -15,8 +16,8 @@ from tensorflow.keras import layers
 np.set_printoptions(precision=10, suppress=True)
 
 abalone_train = pd.read_csv(
-    "https://raw.githubusercontent.com/0Domlightning0/MachineLearningOffical/main/Training_NoTitles.csv",
-    names=['Enrolment','Latitude','Longitude','PercentageofStudentsWhoseFirstLanguageIsNotEnglish','PercentageofStudentsWhoseFirstLanguageIsNotFrench','PercentageofStudentsWhoAreNewtoCanadafromaNonEnglishSpeakingCountry','PercentageofStudentsWhoAreNewtoCanadafromaNonFrenchSpeakingCountry','PercentageofStudentsReceivingSpecialEducationServices','PercentageofStudentsIdentifiedasGifted','PercentageofGrade3StudentsAchievingtheProvincialStandardinReading','ChangeinGrade3ReadingAchievementOverThreeYears','PercentageofGrade3StudentsAchievingtheProvincialStandardinWriting','ChangeinGrade3WritingAchievementOverThreeYears','PercentageofGrade3StudentsAchievingtheProvincialStandardinMathematics','ChangeinGrade3MathematicsAchievementOverThreeYears','PercentageofGrade6StudentsAchievingtheProvincialStandardinReading','ChangeinGrade6ReadingAchievementOverThreeYears','PercentageofGrade6StudentsAchievingtheProvincialStandardinWriting','ChangeinGrade6WritingAchievementOverThreeYears','PercentageofGrade6StudentsAchievingtheProvincialStandardinMathematics','ChangeinGrade6MathematicsAchievementOverThreeYears'])
+    "https://raw.githubusercontent.com/0Domlightning0/MachineLearningOffical/main/OnlyGr6MathCSVnoNames.csv",
+    names=['Enrolment','Latitude','Longitude','PercentageofStudentsWhoseFirstLanguageIsNotEnglish','PercentageofStudentsWhoseFirstLanguageIsNotFrench','PercentageofStudentsWhoAreNewtoCanadafromaNonEnglishSpeakingCountry','PercentageofStudentsWhoAreNewtoCanadafromaNonFrenchSpeakingCountry','PercentageofStudentsReceivingSpecialEducationServices','PercentageofStudentsIdentifiedasGifted','PercentageofGrade3StudentsAchievingtheProvincialStandardinReading','ChangeinGrade3ReadingAchievementOverThreeYears','PercentageofGrade3StudentsAchievingtheProvincialStandardinWriting','ChangeinGrade3WritingAchievementOverThreeYears','PercentageofGrade3StudentsAchievingtheProvincialStandardinMathematics','ChangeinGrade3MathematicsAchievementOverThreeYears','PercentageofGrade6StudentsAchievingtheProvincialStandardinMathematics'])
 
 
 abalone_train.head()
@@ -35,7 +36,7 @@ abalone_model = tf.keras.Sequential([
 abalone_model.compile(loss = tf.keras.losses.MeanSquaredError(),
                       optimizer = tf.keras.optimizers.Adam())
 
-abalone_model.fit(abalone_features, abalone_labels, epochs=100)
+abalone_model.fit(abalone_features, abalone_labels, epochs=1000)
 
 normalize = layers.Normalization()
 
@@ -45,11 +46,44 @@ norm_abalone_model = tf.keras.Sequential([
   layers.Dense(1)
 ])
 
+
 norm_abalone_model.compile(loss = tf.keras.losses.MeanSquaredError(),
                            optimizer = tf.keras.optimizers.Adam())
 
-norm_abalone_model.fit(abalone_features, abalone_labels, epochs=100)
+norm_abalone_model.fit(abalone_features, abalone_labels, epochs=1000)
 
 
-print(norm_abalone_model.predict([225,46.50593,-84.2873,0,100,0,5,15,0,69,-8,66,8,72,-9,80,0,80,13,-13]))
+
+
+#Prediction
+
+
+#Values of the CSV file in a list format for easy processing
+thingy = pd.read_csv("https://raw.githubusercontent.com/0Domlightning0/MachineLearningOffical/main/OnlyGr6MathCSVnoNames.csv", nrows=0,skiprows=4,header=0)
+
+# Index out the brackets
+thingy = str(thingy)
+x = thingy.index(']')
+bozo = (str(thingy)[26:(x)])
+
+# Takes the values and turns it into an integer list
+bozo = bozo.split(', ')
+res = [eval(i) for i in bozo]
+
+
+print(res[15])
+
+print(norm_abalone_model.predict([res[0:15]]))
+
+Total_correct = 0
+
+Total_predict = 0
+
+Total_incorrect = 0
+for i in range(100):
+    pd.read_csv("https://raw.githubusercontent.com/0Domlightning0/MachineLearningOffical/main/OnlyGr6MathCSVnoNames.csv", nrows=0,skiprows=i,header=0)
+    Total_incorrect += abs(res[15] - norm_abalone_model.predict([res[0:15]]))
+
+print(Total_incorrect/100)
+    
 
